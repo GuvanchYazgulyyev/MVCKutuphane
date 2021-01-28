@@ -1,0 +1,27 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLPersonel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Personel Sayfası</h4>
+
+<table class="table table-striped" style="margin-top:10px">
+    <tr style="background-color: #33CC00 ">
+        <th>ID</th>
+        <th>AD</th>
+        <td>GÜNCELLE</td>
+        <td>SİL</td>
+    </tr>
+    @foreach (var prsnl in Model)
+    {
+        <tr>
+            <th>@prsnl.ID</th>
+            <td>@prsnl.Personel</td>
+            <td><a href="/Personel/PersonelSil/@prsnl.ID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Personel/PersonelGetir/@prsnl.ID" class="btn btn-warning">GÜNCELLE</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/PersonelEkle/" class="btn btn-info"> Yeni Personel Ekle</a>

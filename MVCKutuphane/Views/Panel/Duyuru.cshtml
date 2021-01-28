@@ -1,0 +1,32 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLDuyuru>
+@{
+    ViewBag.Title = "Duyuru";
+    Layout = "~/Views/Shared/_LayautPanel.cshtml";
+}
+
+
+<h4>Duyurular Sayfası</h4>
+
+<table class="table table-striped" style="margin-top:10px">
+    <tr style="background-color: #33CC00 ">
+
+        <th>DUYURU BAŞLIĞI</th>
+        <th>İÇERİK</th>
+        <th>TARİHİ</th>
+
+
+    </tr>
+    @foreach (var prsnl in Model)
+    {
+        <tr>
+      
+            <td>@prsnl.DuyuruBaslik</td>
+            <td>@prsnl.Icerik</td>
+            <td>@Convert.ToDateTime(prsnl.Tatih).ToString("dd/MMMM/yyyy")</td>
+        </tr>
+    }
+</table>
+
+
+

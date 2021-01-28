@@ -1,0 +1,54 @@
+﻿@model MVCKutuphane.Models.Entity.TBLHareket
+@{
+    ViewBag.Title = "Odunciade";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Ödünç Iade Sayfası</h4>
+
+@using (Html.BeginForm("OduncGuncelle", "Odunc", FormMethod.Post))
+{
+<div class="form-group" style="margin-top:10px">
+    @*@Html.LabelFor(x => x.ID)*@
+    <label>Hareket Id:</label>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <label>Kitap Adı:</label>
+    @Html.TextBoxFor(x => x.TBLKitap.Ad, new { @class = "form-control" })
+
+    <br />
+    <label>Üye:</label>
+    @Html.TextBoxFor(x => x.TBLUyeler.Ad, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(y => y.TBLUyeler.Ad)*@
+    <br />
+    <label>Personel:</label>
+    @Html.TextBoxFor(x => x.TBLPersonel.Personel, new { @class = "form-control" })
+
+
+    <br />
+    <label>Alış Tarihi:</label>
+    @Html.TextBoxFor(x => x.AlisTarih, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+
+
+    <br />
+    <label>Zamanında İade Tarihi:</label>
+    @Html.TextBoxFor(x => x.IadeTarih, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+
+    <br />
+    <label>Üyenin Getirdigi Tarihi:</label>
+    <input type="text" class="form-control" name="UyeGetirTarih" value="@DateTime.Now.ToShortDateString()" />
+
+    <br />
+    <label>Geç Gelen Gün Sayısı:</label>
+    <input type="text" class="form-control" id="Gecinput" value="@ViewBag.dgr" />
+
+</div>
+    @Html.HiddenFor(x => x.ID)
+    <div style="margin-top:15px">
+        <button class="btn btn-group" style="background-color:#8f33e1; color:white">Ödünç Kitabı Geri Al</button>
+    </div>
+
+
+}
+
+

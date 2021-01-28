@@ -1,0 +1,46 @@
+﻿@using MVCKutuphane.Models.Entity
+@using PagedList
+@using PagedList.Mvc 
+@model PagedList.IPagedList<TBLUyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Üyeler Sayfası</h4>
+
+
+
+<table class="table table-striped" style="margin-top:10px">
+    <tr style="background-color: #33CC00 ">
+        <th>ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>MAİL</th>
+        @*<th>KULLANICI AD</th>
+        <th>ŞİFRE</th>*@
+        @*<th>TELEFON</th>*@
+        <th>OKUL BİLGİ</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>KİTAP GEÇMİŞİ</th>
+    </tr>
+    @foreach (var uylr in Model)
+    {
+        <tr>
+            <th>@uylr.ID</th>
+            <td>@uylr.Ad</td>
+            <td>@uylr.Soyad</td>
+            <td>@uylr.Mail</td>
+            @*<td>@uylr.KullaniciAd</td>
+            <td>@uylr.Sifre</td>*@
+            @*<td>@uylr.Telefon</td>*@
+            <td>@uylr.OkulBilgi</td>
+            <td><a href="/Uye/UyeSil/@uylr.ID" class="btn btn-danger">SİL</a></td>
+            <td><a href="/Uye/UyeGetir/@uylr.ID" class="btn btn-warning">GÜNCELLE</a></td>
+            <td><a href="/Uye/UyeKitapGecmis/@uylr.ID" class="btn" style="background-color:teal; color:white">KİTAP GEÇMİŞİ</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa}))
+<a href="/Uye/UyeEkle/" class="btn btn-info"> Yeni Üye Ekle</a>

@@ -1,0 +1,35 @@
+﻿@model MVCKutuphane.Models.Entity.TBLDuyuru
+@{
+    ViewBag.Title = "DuyuruDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Duyuru Detay Sayfası</h4>
+
+@using (Html.BeginForm("DuyuruGuncelle", "Duyurular", FormMethod.Post)) 
+{
+<div class="form-group" style="margin-top:10px">
+    @*@Html.LabelFor(x => x.ID)*@
+    <label>Duyuru No:</label>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <label>Duyuru Başlığı:</label>
+    @Html.TextBoxFor(x => x.DuyuruBaslik, new { @class = "form-control" })
+    <br />
+    <label>Duyuru İçeriği:</label>
+    @Html.TextAreaFor(x => x.Icerik, new { @class = "form-control" })
+    <br />
+
+    <label>Duyuru Tarihi:</label>
+    @Html.TextBoxFor(x => x.Tatih, new { @class = "form-control" })
+    <br />
+
+    @*@Html.HiddenFor(x => x.ID)*@
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+</div>
+
+}
+
+

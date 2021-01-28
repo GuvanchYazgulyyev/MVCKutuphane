@@ -1,0 +1,30 @@
+﻿@model MVCKutuphane.Models.Entity.TBLYazar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Yazar Ekleme Sayfası</h4>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Yazar Adı:</label>
+        <input class="form-control" type="text" name="Ad" />
+        @Html.ValidationMessageFor(y => y.Ad)
+    </div>
+    <br />
+    <div>
+        <label>Yazar Soyadı:</label>
+        <input class="form-control" type="text" name="Soyad" />
+    </div>
+    <br />
+    <div>
+        <label>Yazar Detayı:</label>
+        @Html.TextAreaFor(y => y.Detay, new { @class = "form-control" })
+        @*<input class="form-control"  type="text" name="Detay" />*@
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success" id="Btn1">Yazarı Ekle</button>
+    </div>
+</form>
+

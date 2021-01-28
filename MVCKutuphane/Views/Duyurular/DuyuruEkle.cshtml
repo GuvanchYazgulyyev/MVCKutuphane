@@ -1,0 +1,25 @@
+﻿@model MVCKutuphane.Models.Entity.TBLDuyuru
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Duyuru Ekleme Sayfası</h4>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Duyuru Başlığı:</label>
+        @Html.TextBoxFor(x => x.DuyuruBaslik, new { @class = "form-control" })
+
+        <label>Duyuru İçeriği:</label>
+        @Html.TextBoxFor(x => x.Icerik, new { @class = "form-control" })
+
+        <label>Duyuru Tarihi:</label>
+        @Html.TextBoxFor(x => x.Tatih, new { @class = "form-control" })
+
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success" id="Btn1">Duyuru Ekle</button>
+    </div>
+</form>
+

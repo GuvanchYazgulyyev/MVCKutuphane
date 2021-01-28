@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7f0750b3354c4598a56ee7f00328d9de" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLCeza" Width="1.5" PointX="0.5" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLHareket" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLKasa" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLKategori" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLKitap" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLPersonel" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLUyeler" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLYazar" Width="1.5" PointX="7.75" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLCeza_TBLHareket" ManuallyRouted="false" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLCeza_TBLUyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLHareket_TBLUyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLKitap_TBLKategori" ManuallyRouted="false" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLKitap_TBLYazar" ManuallyRouted="false" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLHareket_TBLKitap" />
+        <AssociationConnector Association="VTKutuphaneModel.FK_TBLHareket_TBLPersonel" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLHakkimizda" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLiletisim" Width="1.5" PointX="5.375" PointY="8.75" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLMesaj" Width="1.5" PointX="7.375" PointY="8.75" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLDuyuru" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="VTKutuphaneModel.TBLAdmin" Width="1.5" PointX="9.375" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

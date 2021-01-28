@@ -1,0 +1,18 @@
+﻿@model MVCKutuphane.Models.Entity.TBLKategori
+@{
+    ViewBag.Title = "KatagoriEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Katagori Ekleme Sayfası</h4>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Kategori Ad:</label>
+        <input class="form-control" type="text" name="Ad" required=""/>
+        @*@Html.ValidationMessageFor(y => y.AD)*@
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-success" id="Btn1">Kategori Ekle</button>
+    </div>
+</form>

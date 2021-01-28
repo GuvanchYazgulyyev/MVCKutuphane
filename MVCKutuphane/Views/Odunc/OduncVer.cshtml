@@ -1,0 +1,50 @@
+﻿@model MVCKutuphane.Models.Entity.TBLHareket
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Odunc Ver</h2>
+
+<form method="post" class="form-group">
+    <div>
+        <label>Üye Adını Seçiniz:</label>
+        @*@Html.TextBoxFor(k => k.Uye, new { @class = "form-control" })*@
+        @Html.DropDownListFor(k => k.TBLUyeler.ID, (List<SelectListItem>)ViewBag.d1, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Kitap Adını Seçiniz:</label>
+        @*@Html.TextBoxFor(k => k.Kitap, new { @class = "form-control" })*@
+        @Html.DropDownListFor(f => f.TBLKitap.ID, (List<SelectListItem>)ViewBag.d2, new { @class = "form-control" })
+
+    </div>
+    
+    <br />
+    <div>
+        <label>Personel Adını Seçiniz:</label>
+        @*@Html.TextBoxFor(k => k.Personel, new { @class = "form-control" })*@
+        @Html.DropDownListFor(f => f.TBLPersonel.ID, (List<SelectListItem>)ViewBag.d3, new { @class = "form-control" })
+
+    </div>
+    <br />
+    <div>
+        <label>Kitabı Alış Tarihi:</label>
+        @*@Html.TextBoxFor(k => k.AlisTarih, new { @class = "form-control" })*@
+        <input class="form-control" type="text" name="AlisTarih"
+               value="@DateTime.Now.ToShortDateString()" />
+    </div>
+    <br />
+    <div>
+        <label>Kitap İade Tarihi:</label>
+        @*@Html.TextBoxFor(k => k.IadeTarih, new { @class = "form-control" })*@
+        <input class="form-control" type="text" name="IadeTarih"
+               value="@DateTime.Now.AddDays(5).ToShortDateString()" />
+    </div>
+
+    <br />
+    <div style="margin-top:15px">
+        <button class="btn btn-success" id="Btn1">Kitabı Ödünç Ver</button>
+        <input type="hidden" value="False" name="islemDurum" />
+    </div>
+</form>

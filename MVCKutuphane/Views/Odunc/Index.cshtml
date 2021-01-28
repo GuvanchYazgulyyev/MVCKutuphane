@@ -1,0 +1,37 @@
+﻿@using MVCKutuphane.Models.Entity
+@*@using MVCKutuphane.Models.Entity.Siniflarim*@ 
+@model List<TBLHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+
+<h4>Ödünç Kitap Listesi</h4>
+<table class="table table-striped" style="margin-top:10px">
+    <tr style="background-color: #33CC00 ">
+        <th>İŞLEM ID</th>
+        <th>Kitap Adı</th>
+        <th>ÜYE</th>
+        <th>PERSONEL</th>
+        <th>ALIŞ TARİHİ</th>
+        <th>İADE TARİHİ</th>
+        <th>İADE AL</th>
+
+    </tr>
+    @foreach (var ktpiade in Model)
+    {
+        <tr>
+            <td>@ktpiade.ID</td>
+            <td>@ktpiade.TBLKitap.Ad</td>
+            <td>@ktpiade.TBLUyeler.Ad  &nbsp;@ktpiade.TBLUyeler.Soyad</td>
+            <td>@ktpiade.TBLPersonel.Personel</td>
+            <td>@Convert.ToDateTime(ktpiade.AlisTarih).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(ktpiade.IadeTarih).ToString("dd/MM/yyyy")</td>
+
+            <td><a href="/Odunc/Odunciade/@ktpiade.ID" class="btn btn-default" style="background:#57f74b;">Kitabı Iade Et</a></td>
+        </tr>
+    }
+</table>
+
+

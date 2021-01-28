@@ -1,0 +1,26 @@
+﻿@model MVCKutuphane.Models.Entity.TBLPersonel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h4>Personel Getir Sayfası</h4>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+{
+<div class="form-group" style="margin-top:10px">
+    @*@Html.LabelFor(x => x.ID)*@
+    <label>Personel Id:</label>
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    <br />
+    <label>Personel Adı:</label>
+    @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })
+    <br />
+
+    @Html.HiddenFor(x => x.ID)
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Güncelle</button>
+    </div>
+</div>
+
+}

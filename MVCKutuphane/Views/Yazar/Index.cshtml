@@ -1,0 +1,38 @@
+﻿@using MVCKutuphane.Models.Entity
+@model List<TBLYazar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazar </h2>
+
+<table class="table table-striped" style="margin-top:10px">
+    <tr style="background-color: #33CC00 ">
+        <th>ID</th>
+        <th>AD</th>
+        <th>Soyad</th>
+        @*<th>Detay</th>*@
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+        <th>YAZARIN KİTAPLARI</th>
+    </tr>
+    @foreach (var yzr in Model)
+    {
+<tr>
+    <th>@yzr.ID</th>
+    <td>@yzr.Ad</td>
+    <td>@yzr.Soyad</td>
+    @*<td>@yzr.Detay</td>*@
+    <td>
+        @Html.ActionLink("Sil", "YazarSil", new { id = yzr.ID }, new
+   { @class = "btn btn-danger",  onclick = "return confirm('Silmek Istediginizden Emin misiniz?')" })
+    </td>
+    @*<td><a href="/Yazar/YazarSil/@yzr.ID" class="btn btn-danger">SİL</a></td>*@
+    <td><a href="/Yazar/YazarGetir/@yzr.ID" class="btn btn-warning" style="color: dimgray;">GÜNCELLE</a></td>
+    <td><a href="/Yazar/YazarKitaplar/@yzr.ID" class="btn" 
+           style="background-color:aquamarine;color:dimgray;">Yazarın Kitapları</a></td>
+</tr>
+}
+</table>
+<a href="/Yazar/YazarEkle/" class="btn btn-info"> Yeni Yazar Ekle</a>
